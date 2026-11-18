@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Dinosaur Worlds 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="setup" class="overlay">
+    <section class="panel">
+      <h1>Dinosaur Worlds 3D</h1>
+      <p class="subtitle">Choose how you play</p>
+      <div id="modeStep" class="choices">
+        <button class="choice mode" data-mode="computer"><span>Computer</span><small>WASD movement</small></button>
+        <button class="choice mode" data-mode="mobile"><span>Mobile</span><small>Thumbstick controls</small></button>
+      </div>
+
+      <div id="selectStep" class="hidden">
+        <div class="tabs">
+          <button class="tab active" data-tab="Land">Land</button>
+          <button class="tab" data-tab="Water">Water</button>
+        </div>
+        <div id="dinoGrid" class="dino-grid"></div>
+        <div class="private-box">
+          <strong>Private biome</strong>
+          <span>Online friend rooms need a multiplayer server.</span>
+          <div class="room-controls">
+            <input id="roomCode" maxlength="8" placeholder="Room code" aria-label="Private room code">
+            <button id="privateButton">Create / Join</button>
+          </div>
+        </div>
+        <button id="playButton" class="play">Enter Dinosaur World</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="hud" class="hidden">
+    <button id="homeButton" class="home-button">Home</button>
+    <div class="status">
+      <div id="dinoName"></div>
+      <div id="healthText">100 HP</div>
+      <div class="bar"><div id="healthBar"></div></div>
+    </div>
+    <div class="crosshair">+</div>
+    <div class="controls-hint">WASD move · Mouse look · Click to capture mouse · Space jump</div>
+    <div id="actions" class="actions">
+      <button data-action="bite"><b>Bite</b><small>Quick</small></button>
+      <button data-action="whip"><b>Whip</b><small>Tail</small></button>
+      <button data-action="slap"><b>Slap</b><small>Hands / flippers</small></button>
+      <button data-action="jump"><b>Jump</b><small>Space</small></button>
+      <button id="flyButton" class="hidden"><b>Fly / Land</b><small>F key</small></button>
+      <button id="poopButton" class="hidden"><b>Poop</b><small>Air attack</small></button>
+    </div>
+  </div>
+
+  <div id="thumbstick" class="thumbstick hidden"><div id="knob"></div></div>
+  <div id="toast"></div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
